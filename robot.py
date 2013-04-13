@@ -24,8 +24,6 @@ def parsetext(message):
     print message.content
     
     msg = str(message.content)
-   
-    user = str(message.source)
     
     print msg , user
     
