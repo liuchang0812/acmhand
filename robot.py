@@ -1,4 +1,4 @@
-#-*-encoding=utf-8-*-
+#-*-encoding:utf-8-*-
 __author__ = 'liuchang'
 
 
@@ -11,12 +11,13 @@ robot = werobot.WeRoBot(token='helloacmer')
 last = {}
 cont = contest()
 lastconteststime = datetime.now()
-helpstr = "搞acm没妹子哟"
+helpstr = u"搞acm没妹子哟"
 
 @robot.text
 def parsetext(message):
     print "text message"
-    msg = str(message.content)
+    
+    msg = message.content
    
     user = str(message.source)
     
