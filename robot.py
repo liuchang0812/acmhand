@@ -48,7 +48,7 @@ def parsetext(message):
                 title= cont[i]['oj'] + " : " + cont[i]['name'] ,
                 url=cont[i]['link'] ,
                 description= cont[i]['start_time'] ,
-                img = '',
+                img = ''
             ))
         
         return reply
