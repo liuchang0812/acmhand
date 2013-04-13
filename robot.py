@@ -47,7 +47,7 @@ def parsetext(message):
             reply.add_article(Article(
                 title= cont[i]['oj'] + " : " + cont[i]['name'] ,
                 url=cont[i]['link'] ,
-                description= cont[i]['start']
+                description= cont[i]['start_time']
             ))
         
         return reply
