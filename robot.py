@@ -3,13 +3,13 @@ __author__ = 'liuchang'
 
 
 import werobot
-import contests
+from contests import contest
 from werobot.reply import Article , ArticlesReply
 from datetime import datetime
 
 robot = werobot.WeRoBot(token='helloacmer')
 last = {}
-cont = contests()
+cont = contest()
 lastconteststime = datetime.now()
 helpstr = "搞acm没妹子哟"
 
