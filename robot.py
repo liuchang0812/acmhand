@@ -25,7 +25,7 @@ def parsetext(message):
     
     msg = str(message.content)
     
-    print msg , user
+    print msg 
     
     if msg == u"最近比赛" or msg==u"比赛" or msg ==u"contests" :
         if datetime.now().day != lastconteststime.day:
