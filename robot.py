@@ -17,6 +17,8 @@ helpstr = u"搞acm没妹子哟"
 def parsetext(message):
     print "text message"
     
+    print message.content
+    
     msg = str(message.content)
    
     user = str(message.source)
