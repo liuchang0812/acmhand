@@ -15,6 +15,7 @@ helpstr = "搞acm没妹子哟"
 
 @robot.text
 def parsetext(message):
+    print "text message"
     msg = str(message.content)
    
     user = str(message.source)
