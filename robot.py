@@ -6,6 +6,10 @@ import werobot
 from contests import contest
 from werobot.reply import Article , ArticlesReply
 from datetime import datetime
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 
 robot = werobot.WeRoBot(token='helloacmer')
 last = {}
