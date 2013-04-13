@@ -53,6 +53,12 @@ def parsetext(message):
         return reply
     return helpstr
 
-@robot.handler
 def echo(message):
-    return "hello world!"
+    return '''
+    欢迎关注本公众平台~~~~~\n 将为你每天推送比赛信息，acm,noip等算法竞赛相关新闻 ， 更多功能正在开发\n\n
+    回复"比赛" ， 查询最近的比赛信息
+
+    回复"建议" + 你对本主页的建议
+
+    谢谢 。 另外温馨提示： 搞acm找不到妹子哟
+    '''
