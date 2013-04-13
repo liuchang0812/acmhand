@@ -42,14 +42,14 @@ def parsetext(message):
             description= '点击下面看详细   ps:比赛信息由acmicpc提供'
             )
         )
-        '''
+        
         for i in range(min(7,len(cont))):
             reply.add_article(Article(
                 title= cont[i]['oj'] + " : " + cont[i]['name'] ,
                 url=cont[i]['link'] ,
                 description= cont[i]['start']
             ))
-        '''
+        
         return reply
     return helpstr
 
