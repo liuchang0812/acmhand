@@ -1,4 +1,4 @@
-#-*- encoding=utf-8 -*-
+#-*-encoding=utf-8-*-
 __author__ = 'liuchang'
 
 
@@ -18,6 +18,7 @@ def parsetext(message):
     msg = message.content
    
     user = message.source
+    
     print msg , user
     
     if msg == u"最近比赛" or msg==u"比赛" or msg ==u"contests" :
