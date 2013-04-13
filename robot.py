@@ -16,9 +16,9 @@ helpstr = "搞acm没妹子哟"
 @robot.text
 def parsetext(message):
     msg = message.content
-    id = message.id
+   
     user = message.source
-    print msg , id , user
+    print msg , user
     
     if msg == u"最近比赛" or msg==u"比赛" or msg ==u"contests" :
         if datetime.now().day != lastconteststime.day:
