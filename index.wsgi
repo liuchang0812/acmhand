@@ -5,6 +5,6 @@
 __author__ = 'liuchang'
 
 import sae
-from rebot import reobt
+from rebot import rebot
 
 application = sae.create_wsgi_app(robot.wsgi)
