@@ -46,7 +46,8 @@ def parsetext(message):
             reply.add_article(Article(
                 title= cont[i]['oj'] +'\b' + cont[i]['start_time'] + " \n " + cont[i]['name'] ,
                 url=cont[i]['link'] ,
-                description= ''
+                description= '',
+                img = ''
             ))
         
         return reply
