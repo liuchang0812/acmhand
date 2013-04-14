@@ -60,6 +60,6 @@ def parsetext(message):
     return helpstr
     
 
-@robot.handle
+@robot.handler
 def echo(message):
     return helpstr
