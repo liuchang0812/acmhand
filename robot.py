@@ -58,6 +58,8 @@ def parsetext(message):
         
         return reply
     return helpstr
+    
 
+@robot.handle
 def echo(message):
     return helpstr
