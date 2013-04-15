@@ -21,6 +21,7 @@ class topcode(object):
         else:
             dm = minidom.parse( urllib.urlopen( self.ratingurl % cr) )
             n = len(dm.firstChild.childNodes) - 1
+            print "n:%d"% n
             srmname = dm.firstChild.childNodes[n].childNodes[3].firstChild.data
             oldrating = dm.firstChild.childNodes[n].childNodes[5].firstChild.data
             newrating = dm.firstChild.childNodes[n].childNodes[6].firstChild.data
