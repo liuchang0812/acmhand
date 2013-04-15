@@ -20,7 +20,7 @@ tp = topcode()
 lastconteststime = datetime.now()
 helpstr = '''欢迎关注本公众平台~~~~~\n 将为你每天推送比赛信息，acm,noip等算法竞赛相关新闻 ， 更多功能正在开发\n\n
     回复"比赛" ， 查询最近的比赛信息 。
-    回复"tc" , 查询相关的topcoder rating 。
+    回复"rating id" , 查询该id的topcoder rating 。
     回复"建议" + 你对本主页的建议 。
 
     谢谢 。
@@ -53,11 +53,11 @@ def queryrating(id):
     cr = kv.get("tp"+id)
     print "cr: %s " % cr
     if cr != None:
-        return tp.getrating(cr) + "\n\n 回复'取消' ,退出查rating功能"
+        return tp.getrating(cr)
     else :
         cr = tp.getcr(id)
         kv.set("tp"+id , cr)
-        return tp.getrating(cr) + "\n\n 回复'取消' ,退出查rating功能"
+        return tp.getrating(cr)
 
 
 @robot.text
@@ -68,28 +68,22 @@ def parsetext(message):
     print kv.get("status"+user)
 
     print "msg : %s , user : %s" % ( msg , user)
+    '''
     if msg == "取消" :
         kv.set("status" + user , "index")
         return helpstr
-
-    if kv.get("status" + user) == "index":
-        if msg == u"最近比赛" or msg==u"比赛" or msg ==u"contests" :
+    '''
+    #if kv.get("status" + user) == "index":
+    if msg == u"最近比赛" or msg==u"比赛" or msg ==u"contests" :
             return querycontests(message)
-        if msg == u"topcoder" or msg==u"查rating" or msg == u"rating" or msg.lower() == "tc":
+    if msg.startswith(u"rating") :
             #last[user] = "topcoder"
-            kv.set("status" + user , "topcoder")
-            return u'''回复topcoder的id , 查询rating ！
-                   回复“取消” ， 退出查rating功能 !
-                    '''
+            #kv.set("status" + user , "topcoder")
+            #return u'''回复topcoder的id , 查询rating ！
+            #      回复“取消” ， 退出查rating功能 !
+            #        '''
+            return queryrating(msg[:msg.index(' ') + 1])
 
-    else:
-        page = kv.get("status" + user)
-        if page == "topcoder":
-            return queryrating(msg)
-        else :
-            return u'''回复topcoder的id , 查询rating ！
-                   回复“取消” ， 退出查rating功能 !
-                    '''
     return helpstr
     
 
