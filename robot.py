@@ -50,13 +50,13 @@ def querycontests(message):
     return reply
 
 def queryrating(id):
-    cr = kv.get("tp"+id)
-    print "cr: %s " % cr
-    if cr != None:
-        return tp.getrating(cr)
-    else :
+    #cr = kv.get("tp"+id)
+    #print "cr: %s " % cr
+    #if cr != None:
+    #    return tp.getrating(cr)
+    #else :
         cr = tp.getcr(id)
-        kv.set("tp"+id ,cr)
+    #    kv.set("tp"+id ,cr)
         return tp.getrating(cr)
 
 
