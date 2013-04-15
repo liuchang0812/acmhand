@@ -50,14 +50,17 @@ def querycontests(message):
     return reply
 
 def queryrating(id):
-    #cr = kv.get("tp"+id)
-    #print "cr: %s " % cr
-    #if cr != None:
-    #    return tp.getrating(cr)
-    #else :
-        cr = tp.getcr(id)
-    #    kv.set("tp"+id ,cr)
+    cr = kv.get("tp"+id)
+    print "cr: %s " % cr
+    if cr != None:
         return tp.getrating(cr)
+    else :
+        cr = tp.getcr(id)
+        if (cr == None):
+            return u"好像没有这个ID啊，请重新输入一下。 格式： rating id  （ id 为你的id )"
+        else:
+            kv.set("tp"+id ,cr)
+            return tp.getrating(cr)
 
 
 @robot.text
