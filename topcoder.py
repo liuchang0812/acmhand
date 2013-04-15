@@ -17,7 +17,7 @@ class topcode(object):
 
     def getrating(self , cr):
         if cr == None:
-            return -1
+            return u"好像没有这个ID啊，请重新输入一下。"
         else:
             dm = minidom.parse( urllib.urlopen( self.ratingurl % cr) )
             srmname = dm.firstChild.childNodes[0].childNodes[3].firstChild.data
