@@ -83,8 +83,9 @@ def parsetext(message):
             last[user] = "topcoder"
             return u"回复topcoder的id , 查询rating ！ 回复“取消” ， 退出查rating功能"
 
-    if last[user] == "topcoder":
-        return queryrating(msg)
+    else:
+        if last[user] == "topcoder":
+            return queryrating(msg)
     return helpstr
     
 
