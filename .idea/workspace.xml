@@ -26,7 +26,7 @@
       <file leaf-file-name="robot.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/robot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="4" selection-start="1552" selection-end="1552" vertical-scroll-proportion="0.5302198">
+            <state line="71" column="4" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.739011">
               <folding />
             </state>
           </provider>
@@ -274,7 +274,11 @@
       <created>1366032462186</created>
       <updated>1366032462186</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002">
+      <created>1366032590107</created>
+      <updated>1366032590107</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -379,7 +383,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/robot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="4" selection-start="1552" selection-end="1552" vertical-scroll-proportion="0.5302198">
+        <state line="71" column="4" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.739011">
           <folding />
         </state>
       </provider>
