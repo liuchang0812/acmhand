@@ -20,11 +20,12 @@ class topcode(object):
             return u"好像没有这个ID啊，请重新输入一下。 格式： rating id  （ id 为你的id )"
         else:
             dm = minidom.parse( urllib.urlopen( self.ratingurl % cr) )
-            srmname = dm.firstChild.childNodes[0].childNodes[3].firstChild.data
-            oldrating = dm.firstChild.childNodes[0].childNodes[5].firstChild.data
-            newrating = dm.firstChild.childNodes[0].childNodes[6].firstChild.data
-            rank = dm.firstChild.childNodes[0].childNodes[7].firstChild.data
-            print srmname , oldrating , newrating , rank
+            n = len(dm._get_firstChild.childNodes) - 1
+            srmname = dm.firstChild.childNodes[n].childNodes[3].firstChild.data
+            oldrating = dm.firstChild.childNodes[n].childNodes[5].firstChild.data
+            newrating = dm.firstChild.childNodes[n].childNodes[6].firstChild.data
+            rank = dm.firstChild.childNodes[n].childNodes[7].firstChild.data
+            #print srmname , oldrating , newrating , rank
             return u"你在最近的 %s 比赛中，排行 %s 名，rating由 %s 变为了 %s ! 继续加油！" % ( srmname , rank , oldrating , newrating)
         return u"好像没有这个ID啊，请重新输入一下。 格式： rating id  （ id 为你的id )"
 
