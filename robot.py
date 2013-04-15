@@ -66,7 +66,8 @@ def parsetext(message):
     print "text message"
     
     print message.content
-    
+    print len(last)
+
     msg = str(message.content)
    
     user = str(message.source)
