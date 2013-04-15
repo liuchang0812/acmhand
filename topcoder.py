@@ -35,5 +35,5 @@ class topcode(object):
 
 if __name__ == "__main__":
     tp = topcode()
-    print tp.getcr('liuchnag')
-    print tp.getrating("22873410")
+    print tp.getcr('watashi')
+    print tp.getrating("15656342")
