@@ -20,11 +20,11 @@ tp = topcode()
 lastconteststime = datetime.now()
 helpstr = '''
     欢迎关注本公众平台~~~~~\n 将为你每天推送比赛信息，acm,noip等算法竞赛相关新闻 ， 更多功能正在开发\n\n
-    回复"比赛" ， 查询最近的比赛信息
+    回复"比赛" ， 查询最近的比赛信息 。
+    回复"TP" , 查询相关的topcoder rating 。
+    回复"建议" + 你对本主页的建议 。
 
-    回复"建议" + 你对本主页的建议
-
-    谢谢 。 另外温馨提示： 搞acm找不到妹子哟
+    谢谢 。
     '''
 
 def querycontests(message):
@@ -34,7 +34,7 @@ def querycontests(message):
     reply = ArticlesReply(message=message)
     reply.add_article(
         Article(
-            title = "发现最近有不少比赛哟！快去虐菜吧！！点击下面看详细   ps:比赛信息由acmicpc提供" ,
+            title = "发现最近有不少比赛哟！快去虐菜吧！！点击下面看详细" ,
             img = "https://raw.github.com/Liuchang0812/acmhand/master/acmhand/img/acmlogo.jpg" ,
             url = " http://acmicpc.info",
             description= ''
@@ -76,17 +76,21 @@ def parsetext(message):
     if kv.get("status" + user) == "index":
         if msg == u"最近比赛" or msg==u"比赛" or msg ==u"contests" :
             return querycontests(message)
-        if msg == u"topcoder" or msg==u"查rating" or msg == u"rating":
+        if msg == u"topcoder" or msg==u"查rating" or msg == u"rating" or msg.lower() == "tp":
             #last[user] = "topcoder"
             kv.set("status" + user , "topcoder")
-            return u"回复topcoder的id , 查询rating ！ 回复“取消” ， 退出查rating功能"
+            return u'''回复topcoder的id , 查询rating ！
+                   回复“取消” ， 退出查rating功能 !
+                    '''
 
     else:
         page = kv.get("status" + user)
         if page == "topcoder":
             return queryrating(msg)
         else :
-            return helpstr ;
+            return u'''回复topcoder的id , 查询rating ！
+                   回复“取消” ， 退出查rating功能 !
+                    '''
     return helpstr
     
 
