@@ -25,7 +25,7 @@ class topcode(object):
             newrating = dm.firstChild.childNodes[0].childNodes[6].firstChild.data
             rank = dm.firstChild.childNodes[0].childNodes[7].firstChild.data
             print srmname , oldrating , newrating , rank
-            return u"你在最近的%s比赛中，排行%s名，rating由%s变为了%s! 继续加油！" % ( srmname , rank , oldrating , newrating)
+            return u"你在最近的 %s 比赛中，排行 %s 名，rating由 %s 变为了 %s ! 继续加油！" % ( srmname , rank , oldrating , newrating)
         return u"好像没有这个ID啊，请重新输入一下。"
 
 
