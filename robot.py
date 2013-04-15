@@ -8,14 +8,13 @@ from werobot.reply import Article , ArticlesReply
 from datetime import datetime
 import sys
 from topcoder import topcode
+import sae.kvdb
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
 robot = werobot.WeRoBot(token='helloacmer')
-last = {}
-tpcr = {}
-cfcr = {}
+kv = sae.kvdb.KVClient()
 cont = contest()
 tp = topcode()
 lastconteststime = datetime.now()
@@ -52,39 +51,38 @@ def querycontests(message):
     return reply
 
 def queryrating(id):
-
-    if tpcr.has_key(id):
-        return tp.getrating(tpcr[id])
+    cr = kv.get("tp"+id)
+    if cr != none:
+        return tp.getrating(cr)
     else :
         cr = tp.getcr(id)
-        tpcr[id] = cr
+        kv.set("tp"+id , cr)
         return tp.getrating(cr)
 
 
 @robot.text
 def parsetext(message):
     print "text message"
-
-    print len(last)
-
     msg = str(message.content)
-   
     user = str(message.source)
-    
+    print kv.get("status"+user)
+
     print msg , user
     if msg == "取消":
-        last.pop(k=user)
+        kv.set("status" + user , "index")
         return helpstr
 
-    if last.has_key(user) == False:
+    if kv.get("status" + user) == None:
         if msg == u"最近比赛" or msg==u"比赛" or msg ==u"contests" :
             return querycontests(message)
         if msg == u"topcoder" or msg==u"查rating" or msg == u"rating":
-            last[user] = "topcoder"
+            #last[user] = "topcoder"
+            kv.set("status" + user , "topcoder")
             return u"回复topcoder的id , 查询rating ！ 回复“取消” ， 退出查rating功能"
 
     else:
-        if last[user] == "topcoder":
+        page = kv.get("status" + user)
+        if page == "topcoder":
             return queryrating(msg)
     return helpstr
     
