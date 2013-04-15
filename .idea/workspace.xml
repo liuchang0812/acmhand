@@ -26,7 +26,7 @@
       <file leaf-file-name="robot.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/robot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="38" selection-start="1763" selection-end="1767" vertical-scroll-proportion="0.33333334">
+            <state line="55" column="18" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.44542772">
               <folding>
                 <element signature="e#48#62#0" expanded="true" />
               </folding>
@@ -306,7 +306,11 @@
       <created>1366033399109</created>
       <updated>1366033399109</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加sae kvdb , 支持session">
+      <created>1366033550107</created>
+      <updated>1366033550107</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -426,7 +430,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/robot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="38" selection-start="1763" selection-end="1767" vertical-scroll-proportion="0.33333334">
+        <state line="55" column="18" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.44542772">
           <folding>
             <element signature="e#48#62#0" expanded="true" />
           </folding>
