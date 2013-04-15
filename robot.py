@@ -82,7 +82,9 @@ def parsetext(message):
             #return u'''回复topcoder的id , 查询rating ！
             #      回复“取消” ， 退出查rating功能 !
             #        '''
-            return queryrating(msg[:msg.index(' ') + 1])
+            id = msg[:msg.index(' ') + 1]
+            print "id: %s" % id
+            return queryrating(id)
 
     return helpstr
     
