@@ -54,11 +54,11 @@ def queryrating(id):
     cr = kv.get("tp"+id)
     print "cr: %s " % cr
     if cr != None:
-        return tp.getrating(cr)
+        return tp.getrating(cr) + "\n\n 回复'取消' ,退出查rating功能"
     else :
         cr = tp.getcr(id)
         kv.set("tp"+id , cr)
-        return tp.getrating(cr)
+        return tp.getrating(cr) + "\n\n 回复'取消' ,退出查rating功能"
 
 
 @robot.text
