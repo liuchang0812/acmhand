@@ -56,7 +56,7 @@ def queryrating(id):
         return tp.getrating(cr)
     else :
         cr = tp.getcr(id)
-        kv.set("tp"+id , cr)
+        kv.set("tp"+id ,cr)
         return tp.getrating(cr)
 
 
@@ -82,7 +82,7 @@ def parsetext(message):
             #return u'''回复topcoder的id , 查询rating ！
             #      回复“取消” ， 退出查rating功能 !
             #        '''
-            id = msg[msg.index(' '):]
+            id = msg[msg.index(' '):].strip()
             print "id: %s" % id
             return queryrating(id)
 
