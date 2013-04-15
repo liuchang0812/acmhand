@@ -68,7 +68,7 @@ def parsetext(message):
     user = str(message.source)
     print kv.get("status"+user)
 
-    print msg , user
+    print "msg : %s , user : %s" & (msg , user)
     if msg == "取消":
         kv.set("status" + user , "index")
         return helpstr
