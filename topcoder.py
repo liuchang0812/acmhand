@@ -22,7 +22,8 @@ class topcode(object):
             dm = minidom.parse( urllib.urlopen( self.ratingurl % cr) )
             n = len(dm.firstChild.childNodes) - 1
             print "n:%d"% n
-
+            if n == -1:
+                return u"好像没有这个ID啊，请重新输入一下。 格式： rating id  （ id 为你的id )"
             srmname = dm.firstChild.childNodes[n].childNodes[3].firstChild.data
             oldrating = dm.firstChild.childNodes[n].childNodes[5].firstChild.data
             newrating = dm.firstChild.childNodes[n].childNodes[6].firstChild.data
