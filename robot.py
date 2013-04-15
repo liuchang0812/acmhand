@@ -73,7 +73,7 @@ def parsetext(message):
         kv.set("status" + user , "index")
         return helpstr
 
-    if kv.get("status" + user) == None:
+    if kv.get("status" + user) == "index":
         if msg == u"最近比赛" or msg==u"比赛" or msg ==u"contests" :
             return querycontests(message)
         if msg == u"topcoder" or msg==u"查rating" or msg == u"rating":
@@ -85,6 +85,8 @@ def parsetext(message):
         page = kv.get("status" + user)
         if page == "topcoder":
             return queryrating(msg)
+        else :
+            return helpstr ;
     return helpstr
     
 
