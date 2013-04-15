@@ -26,7 +26,7 @@
       <file leaf-file-name="robot.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/robot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="28" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.8956044">
+            <state line="74" column="38" selection-start="1763" selection-end="1767" vertical-scroll-proportion="0.33333334">
               <folding>
                 <element signature="e#48#62#0" expanded="true" />
               </folding>
@@ -302,7 +302,11 @@
       <created>1366032647106</created>
       <updated>1366032647106</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加sae kvdb , 支持session">
+      <created>1366033399109</created>
+      <updated>1366033399109</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -364,7 +368,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加sae kvdb , 支持session" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -377,6 +381,7 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="添加sae kvdb , 支持session" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -421,7 +426,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/robot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="28" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.8956044">
+        <state line="74" column="38" selection-start="1763" selection-end="1767" vertical-scroll-proportion="0.33333334">
           <folding>
             <element signature="e#48#62#0" expanded="true" />
           </folding>

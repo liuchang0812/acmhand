@@ -52,7 +52,7 @@ def querycontests(message):
 
 def queryrating(id):
     cr = kv.get("tp"+id)
-    if cr != none:
+    if cr != None:
         return tp.getrating(cr)
     else :
         cr = tp.getcr(id)
