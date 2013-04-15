@@ -18,8 +18,7 @@ kv = sae.kvdb.KVClient()
 cont = contest()
 tp = topcode()
 lastconteststime = datetime.now()
-helpstr = '''
-    欢迎关注本公众平台~~~~~\n 将为你每天推送比赛信息，acm,noip等算法竞赛相关新闻 ， 更多功能正在开发\n\n
+helpstr = '''欢迎关注本公众平台~~~~~\n 将为你每天推送比赛信息，acm,noip等算法竞赛相关新闻 ， 更多功能正在开发\n\n
     回复"比赛" ， 查询最近的比赛信息 。
     回复"tc" , 查询相关的topcoder rating 。
     回复"建议" + 你对本主页的建议 。
