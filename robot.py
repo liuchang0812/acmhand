@@ -53,14 +53,14 @@ def queryrating(id):
     cr = kv.get("tp"+id)
     print "cr: %s " % cr
     if cr != None:
-        return tp.getrating(cr)
+        return tp.getrating(cr,id)
     else :
         cr = tp.getcr(id)
         if (cr == None):
             return u"好像没有这个ID啊，请重新输入一下。 格式： rating id  （ id 为你的id )"
         else:
-            kv.set("tp"+id ,cr,id)
-            return tp.getrating(cr)
+            kv.set("tp"+id ,cr)
+            return tp.getrating(cr,id)
 
 
 @robot.text
