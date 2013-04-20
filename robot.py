@@ -59,7 +59,7 @@ def queryrating(id):
         if (cr == None):
             return u"好像没有这个ID啊，请重新输入一下。 格式： rating id  （ id 为你的id )"
         else:
-            kv.set("tp"+id ,cr)
+            kv.set("tp"+id ,cr,id)
             return tp.getrating(cr)
 
 
