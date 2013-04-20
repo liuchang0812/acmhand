@@ -34,6 +34,4 @@ class topcode(object):
 
 
 if __name__ == "__main__":
-    tp = topcode()
-    print tp.getcr('watashi')
-    print tp.getrating("15656342")
+   
