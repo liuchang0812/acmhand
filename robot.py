@@ -26,7 +26,7 @@ hellostr = '''欢迎关注本公众平台~~~~~\n 将为你每天推送比赛信 
     
     谢谢 。
     '''
-helpstr = '''回复"比赛"  ， 查询最近的比赛信息 。
+helpstr = '''回复"比赛",查询最近的比赛信息 。
 回复"cf id" ,  查询该id的tc rating 。
 回复"tc id" ,  查询该id的cf rating 。
     
