@@ -84,7 +84,7 @@ def parsetext(message):
         return helpstr
     '''
     #if kv.get("status" + user) == "index":
-    if msg == u"最近比赛" or msg==u"比赛" or msg ==u"contests" :
+    if msg == u"bs" or msg==u"比赛" or msg ==u"contests" :
             return querycontests(message)
     if msg.startswith(u"tc") :
             #last[user] = "topcoder"
