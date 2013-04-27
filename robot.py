@@ -19,10 +19,16 @@ kv = sae.kvdb.KVClient()
 cont = contest()
 tp = topcode()
 lastconteststime = datetime.now()
-helpstr = '''欢迎关注本公众平台~~~~~\n 将为你每天推送比赛信息，acm,noip等算法竞赛相关新闻 ， 更多功能正在开发\n\n
-    回复"比赛" ， 查询最近的比赛信息 。
-    回复"cf id" , 查询该id的topcoder rating 。
-    回复"tc id" , 查询该id的codeforces rating 。
+hellostr = '''欢迎关注本公众平台~~~~~\n 将为你每天推送比赛信 ， 更多功能正在开发\n\n
+    回复 "比赛"  ， 查询最近的比赛信息 。
+    回复 "cf id" ,  查询该id的tc rating 。
+    回复 "tc id" ,  查询该id的cf rating 。
+    
+    谢谢 。
+    '''
+helpstr = '''回复"比赛"  ， 查询最近的比赛信息 。
+             回复"cf id" ,  查询该id的tc rating 。
+             回复"tc id" ,  查询该id的cf rating 。
     
     谢谢 。
     '''
@@ -99,4 +105,4 @@ def parsetext(message):
 
 @robot.handler
 def echo(message):
-    return helpstr
+    return hellostr
