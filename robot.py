@@ -48,7 +48,7 @@ def querycontests(message):
     )
     for i in range(min(7,len(cont))):
         reply.add_article(Article(
-            title=  cont[i]['start_time'] + " \n " + cont[i]['name'] ,
+            title=  cont[i]['start_time'] + " \n " + cont[i]['name'] + cont[i]['oj'] + cont[i]['access'] ,
             url=cont[i]['link'] ,
             description= '',
             img = ''

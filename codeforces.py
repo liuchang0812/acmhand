@@ -28,7 +28,8 @@ class codeforces(object):
             if  int(change) > 0 :
                 return u"%s 在最近的 %s 比赛中，排名 %s ，rating 变为 %s , 涨了 %s 点。Orz神牛啊~"%( id , contest_name , rank , rating , change)
             else:
-                return u"%s 在最近的 %s 比赛中，排名 %s , rating 变为 %s , 跌了 %s 点。继续加油吧~"%( id , contest_name , rank , rating , change)
+                change = -int(change)
+                return u"%s 在最近的 %s 比赛中，排名 %s , rating 变为 %s , 跌了 %d 点。继续加油吧~"%( id , contest_name , rank , rating , change)
         return " 好想没有这个ID，请重新输入 "
 
 if __name__ == "__main__":
