@@ -72,36 +72,27 @@ def queryrating(id):
 
 @robot.text
 def parsetext(message):
-    print "text message"
-    msg = str(message.content)
-    user = str(message.source)
-    print kv.get("status"+user)
-
-    print "msg : %s , user : %s" % ( msg , user)
-    '''
-    if msg == "取消" :
-        kv.set("status" + user , "index")
-        return helpstr
-    '''
-    #if kv.get("status" + user) == "index":
-    if msg == u"bs" or msg==u"比赛" or msg ==u"contests" :
-            return querycontests(message)
-    if msg.startswith(u"tc") :
-            #last[user] = "topcoder"
-            #kv.set("status" + user , "topcoder")
-            #return u'''回复topcoder的id , 查询rating ！
-            #      回复“取消” ， 退出查rating功能 !
-            #        '''
-            id = msg[msg.index(' '):].strip()
-            print "id: %s" % id
-            return queryrating(id)
-    if msg.startswith(u"cf") :
-            id = msg[msg.index(' '):].strip()
-            print "id: %s" % id
-            return cf.getrating(id)
+    try:
+        print "text message"
+        msg = str(message.content)
+        user = str(message.source)
+  
+        print "msg : %s , user : %s" % ( msg , user)
+      
+        if msg == u"bs" or msg==u"比赛" or msg ==u"contests" :
+                return querycontests(message)
+        if msg.startswith(u"tc") :
+                id = msg[msg.index(' '):].strip()
+                print "id: %s" % id
+                return queryrating(id)
+        if msg.startswith(u"cf") :
+                id = msg[msg.index(' '):].strip()
+                print "id: %s" % id
+                return cf.getrating(id)
         
-    return helpstr
-    
+        return helpstr
+    except :
+        return "服务器好像出问题了，过一会儿再试一下吧"
 
 @robot.handler
 def echo(message):
