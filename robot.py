@@ -8,6 +8,7 @@ from werobot.reply import Article , ArticlesReply
 from datetime import datetime
 import sys
 from topcoder import topcode
+from codeforces import codeforces
 import sae.kvdb
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -20,11 +21,12 @@ tp = topcode()
 lastconteststime = datetime.now()
 helpstr = '''欢迎关注本公众平台~~~~~\n 将为你每天推送比赛信息，acm,noip等算法竞赛相关新闻 ， 更多功能正在开发\n\n
     回复"比赛" ， 查询最近的比赛信息 。
-    回复"rating id" , 查询该id的topcoder rating 。
+    回复"cf id" , 查询该id的topcoder rating 。
+    回复"tc id" , 查询该id的codeforces rating 。
     
     谢谢 。
     '''
-
+cf = codeforces()
 def querycontests(message):
     if datetime.now().day != lastconteststime.day:
         cont.update()
@@ -56,7 +58,7 @@ def queryrating(id):
     else :
         cr = tp.getcr(id)
         if (cr == None):
-            return u"好像没有这个ID啊，请重新输入一下。 格式： rating id  （ id 为你的id )"
+            return u"好像没有这个ID啊，请重新输入一下。 格式：tc id  （ id 为你的tc id )"
         else:
             kv.set("tp"+id ,cr)
             return tp.getrating(cr,id)
@@ -78,7 +80,7 @@ def parsetext(message):
     #if kv.get("status" + user) == "index":
     if msg == u"最近比赛" or msg==u"比赛" or msg ==u"contests" :
             return querycontests(message)
-    if msg.startswith(u"rating") :
+    if msg.startswith(u"tc") :
             #last[user] = "topcoder"
             #kv.set("status" + user , "topcoder")
             #return u'''回复topcoder的id , 查询rating ！
@@ -87,7 +89,11 @@ def parsetext(message):
             id = msg[msg.index(' '):].strip()
             print "id: %s" % id
             return queryrating(id)
-
+    if msg.startswith(u"cf") :
+            id = msg[msg.index(' '):].strip()
+            print "id: %s" % id
+            return cf.getrating(id)
+        
     return helpstr
     
 
