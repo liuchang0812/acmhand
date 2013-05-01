@@ -53,7 +53,12 @@ def querycontests(message):
             description= '',
             img = ''
         ))
-
+    reply.add_article(Article(
+        title = "查看所有比赛信息" ,
+        url = "http://3.wechatforwuluo.sinaapp.com/contests" ,
+        description='' ,
+        img=''
+    ))
     return reply
 
 def queryrating(id):
