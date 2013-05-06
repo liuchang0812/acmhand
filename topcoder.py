@@ -19,7 +19,7 @@ class topcode(object):
 
     def getrating(self , cr , id):
         if cr == None:
-            return u"好像没有这个ID啊，请重新输入一下。 格式： rating id  （ id 为你的id )"
+            return u"好像没有这个ID啊，请重新输入一下。 格式： tc id  （ id 为你的id )"
         else:
             dm = minidom.parse( urllib.urlopen( self.ratingurl % cr) )
             n = len(dm.firstChild.childNodes) - 1
@@ -32,7 +32,7 @@ class topcode(object):
             rank = dm.firstChild.childNodes[n].childNodes[8].firstChild.data
             #print srmname , oldrating , newrating , rank
             return u"%s 在最近的 %s 比赛中，排行 %s 名，rating由 %s 变为了 %s ! 继续加油！" % ( id , srmname , rank , oldrating , newrating)
-        return u"好像没有这个ID啊，请重新输入一下。 格式： rating id  （ id 为你的id )"
+        return u"好像没有这个ID啊，请重新输入一下。 格式： tc id"
 
 if __name__ == '__main__':
     print 'begin'
