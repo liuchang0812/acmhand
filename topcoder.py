@@ -10,7 +10,9 @@ class topcode(object):
     def getcr(self, id):
         try:
             url = self.crurl % id
+            print url
             r = urllib.urlopen(url).geturl()
+            print r
             return str(r)[str(r).index("&cr=") + 4 : ]
         except :
             return None
@@ -27,7 +29,12 @@ class topcode(object):
             srmname = dm.firstChild.childNodes[n].childNodes[3].firstChild.data
             oldrating = dm.firstChild.childNodes[n].childNodes[5].firstChild.data
             newrating = dm.firstChild.childNodes[n].childNodes[6].firstChild.data
-            rank = dm.firstChild.childNodes[n].childNodes[7].firstChild.data
+            rank = dm.firstChild.childNodes[n].childNodes[8].firstChild.data
             #print srmname , oldrating , newrating , rank
             return u"%s 在最近的 %s 比赛中，排行 %s 名，rating由 %s 变为了 %s ! 继续加油！" % ( id , srmname , rank , oldrating , newrating)
         return u"好像没有这个ID啊，请重新输入一下。 格式： rating id  （ id 为你的id )"
+
+if __name__ == '__main__':
+    print 'begin'
+    tp = topcode()
+    print tp.getrating('22840511' ,'WJMZBMR')
