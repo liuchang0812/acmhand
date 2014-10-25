@@ -9,7 +9,10 @@ from datetime import datetime
 import sys
 from topcoder import topcode
 from codeforces import codeforces
-import sae.kvdb
+try:
+    import sae.kvdb
+except ImportError:
+    pass
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -75,6 +78,23 @@ def queryrating(id):
             return tp.getrating(cr,id)
 
 
+def queryRegion(message):
+    status = 1
+    res = ""
+    if message in [u'xian', u'西安', u'西安赛区'] :
+        res = u"西安赛区现场赛于2014年10月26日9:00~14:00在西北工业大学举办，比赛的排行榜地址是：<a href=\"http://board.acmicpc.info/icpc2014/nwpu_onsite.php\">欢迎访问</a>"
+    elif message in [u'guangzhou', u'广州', u'广州赛区']:
+        res = u"广州赛区现场赛于2014年11月23日9:00~14:00在华南理工大学举办，比赛的排行榜地址是：<a href=\"http://board.acmicpc.info/icpc2014/scut_onsite.php\">欢迎访问</a>"
+    elif message in [u'beijing', u'北京', u'北京赛区']:
+        res = u"北安赛区现场赛于2014年11月16日9:00~14:00在北京师范大学举办，比赛的排行榜地址是：<a href=\"http://board.acmicpc.info/icpc2014/bnu_onsite.php\">欢迎访问</a>"
+    elif message in [u'shanghai', u'上海', u'上海赛区']:
+        res = u"上海赛区现场赛于2014年12月06日9:00~14:00在上海大学举办，比赛的排行榜地址是：<a href=\"http://board.acmicpc.info/icpc2014/shu_onsite.php\">欢迎访问</a>"
+    else:
+        status = 0
+        res = ""
+    return status, res
+
+
 @robot.text
 def parsetext(message):
     try:
@@ -94,7 +114,9 @@ def parsetext(message):
                 id = msg[msg.index(' '):].strip()
                 print "id: %s" % id
                 return cf.getrating(id)
-        
+        status, res =  queryRegion(msg)    
+        if status == 1:
+            return res
         return helpstr
     except :
         return "服务器好像出问题了，过一会儿再试一下吧"
@@ -102,3 +124,10 @@ def parsetext(message):
 @robot.handler
 def echo(message):
     return hellostr
+
+if __name__ == "__main__":
+    print queryRegion("xian")
+    print queryRegion("shanghai")
+    print queryRegion("beijing")
+    print queryRegion("广州")
+    print queryRegion("现场赛")
